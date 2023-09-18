@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TrackModel } from '@core/models/tracks.model';
 
 @Component({
   selector: 'app-card-player',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-player.component.css'],
 })
 export class CardPlayerComponent {
-  @Input() track: any = {};
+  @Input() track!: TrackModel;
   @Input() mode: 'small' | 'big' = 'small';
 }
