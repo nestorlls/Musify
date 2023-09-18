@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
@@ -16,6 +17,8 @@ export class SideBarComponent {
 
   customOptions: any[] = [];
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.mainMenu.defaultOptions = [
       {
@@ -26,12 +29,12 @@ export class SideBarComponent {
       {
         name: 'Search',
         icon: 'uil uil-search',
-        router: ['/search'],
+        router: ['/', 'history'],
       },
       {
         name: 'Your Library',
         icon: 'uil uil-music',
-        router: ['/library'],
+        router: ['/', 'tracks'],
       },
     ];
 
@@ -43,6 +46,7 @@ export class SideBarComponent {
       {
         name: 'Favorites',
         icon: 'uil uil-heart',
+        router: ['/', 'favorites'],
       },
     ];
 
@@ -60,5 +64,10 @@ export class SideBarComponent {
         router: ['/'],
       },
     ];
+  }
+
+  goTo($event: any) {
+    $event.preventDefault();
+    this.router.navigate(['/', 'favorites']);
   }
 }
