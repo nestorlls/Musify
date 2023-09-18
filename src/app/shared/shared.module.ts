@@ -25,6 +25,8 @@ import { PlayListBodyComponent } from './components/play-list-body/play-list-bod
     HeaderUserComponent,
     CardPlayerComponent,
     SectionGenericComponent,
+    PlayListHeaderComponent,
+    PlayListBodyComponent,
   ],
 })
 export class SharedModule {}
